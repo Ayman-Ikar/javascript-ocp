@@ -31,6 +31,9 @@
         }
     }
 
+    Student.prototype = Object.create(Person.prototype);
+    Student.prototype.constructor = Student;
+
     let ayman = new Student('Ayman', 'Ikar', 26);
 
     ayman.enroll(123);
