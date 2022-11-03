@@ -126,4 +126,4 @@ let reloadJS = () => {
   body.appendChild(newScriptTag);
 };
 
-setInterval(reloadJS, 1000);
+//setInterval(reloadJS, 1000);
