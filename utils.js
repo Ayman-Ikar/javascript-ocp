@@ -4,11 +4,11 @@
 let domActionBuffer = [];
 let flushTimeout;
 
-window.display = function () {
+export function execute () {
   if (!flushTimeout) flushTimeout = setTimeout(flushDomQueue, 100);
 
   domActionBuffer.push({ action: 'display', arguments: arguments });
-};
+}
 
 window.displayRegexArray = function () {
   if (!flushTimeout) flushTimeout = setTimeout(flushDomQueue, 100);
@@ -126,4 +126,4 @@ let reloadJS = () => {
   body.appendChild(newScriptTag);
 };
 
-//setInterval(reloadJS, 1000);
+export {execute as display} from './utils.js';
